@@ -1,0 +1,16 @@
+/* Practice CustomFonts Style Sheet */
+
+@font-face {
+    font-family: 'titilliumregular';
+    src: url('../fonts/titilliumwebfontkit/titillium-regular-webfont.woff2') format('woff2'),
+         url('../fonts/titilliumwebfontkit/titillium-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.squirrel{
+    font-family: 'titilliumregular', sans-serif, "Courier New";
+}
+.google {
+    font-family: 'UnifrakturCook', cursive;
+}
