@@ -1,0 +1,73 @@
+/* Luke Brandt 11/05/2020*/
+body{
+    height:100%;
+    background-image: linear-gradient( blue,rgb(0, 255, 106)) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+td,th{
+    border: 1px solid black;
+
+}
+table{
+    background-color: lightcyan;
+    border:  .5em solid  rgb(1, 255, 107);
+    margin-top: 2em;
+    
+    width: 100%;
+    font-size:1.5em;
+    
+}
+
+
+thead{
+    font-weight: bold;
+    background-color:cornsilk;
+
+}
+caption{
+    font-weight: bold;
+    color: white;
+    font-size: 2em;
+}
+tfoot{
+    text-align: center;
+    background-color:cornsilk;
+}
+
+/* style for top table*/
+colgroup{
+    background-color: darkseagreen;
+}
+.firsttable{
+    background-color: lightcyan;
+}
+.half{
+    background-color: limegreen;
+}
+
+/*style for second table*/
+.secondtable{
+    background-color: darkseagreen;
+}
+
+/* unvisited link */
+a:link {
+    color:#420adb;;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: darkblue;
+  }
+  
+  /* hover link */
+  a:hover {
+    color: yellowgreen;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #0000FF;
+  }
