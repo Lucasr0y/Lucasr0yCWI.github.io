@@ -1,0 +1,70 @@
+
+/*Luke Brandt, 11/06/2020 */
+
+@font-face{
+    font-family:'quicksand';
+	src:url('../fonts/quicksand/quicksand-italic-webfont.woff') format('woff'),
+	url('../fonts/quicksand/Quicksand-Italic.otf') format('otf');
+	font-weight: normal;
+    font-style: italic; 
+}
+
+html{
+	background-image: url("../images/jewelry.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+main{
+	background-image: linear-gradient( #FFFFFF, #F0F9E6
+	);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 2em;
+	font-size: 1.25em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+ footer{
+	 font-size: 1em;
+	 padding: 10px ;
+	 text-align: center;
+ }
+
+ h1{
+	 
+	 font-family: 'Pacifico', cursive, sans-serif;
+	 font-size: 4em;
+ }
+
+ h2{
+	 font-family: 'quicksand', cursive, sans-serif;
+	 font-size: 2em;
+ }
+ /*style for navigation list*/
+ nav > ul{
+	 list-style-type: none;
+	font-size:1.5em;
+	float: none;
+ }
+	 
+#outerwrapper {	
+
+	background: rgba(243,205,170, 0.4);
+	border-radius: 15%;
+	width:70%;
+	position: absolute;
+	top:50px;
+	left: 300px;
+}
+
+
+/*necklace image styles */
+/* used the addrightmargin class since it targets this specific image*/
+.addrightmargin{
+	margin-right: 10%;
+	float: left;
+	border-radius: 100%;
+}
+
+
