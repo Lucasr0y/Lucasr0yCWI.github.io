@@ -1,7 +1,0 @@
-/* Luke Brandt 11/10/2020*/
-
-
-svg:hover .my_image{
-    transform: scale(.5);
-    transition: 1.3s;
-}
