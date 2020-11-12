@@ -1,0 +1,120 @@
+/*Luke Brandt 11/11/2020*/
+
+@font-face{
+    font-family:'glacial';
+    src:url('../font/glacialindifference-regular-webfont.woff') format('woff'),
+    url('../font/GlacialIndifference-Regular.otf') format('otf');
+    font-weight: normal;
+}
+html{
+    background-color: rgb(1, 39, 97);
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*top name bar*/
+.profile{
+    border: 1px solid white;
+    
+    background-color: rgb(49, 103, 107);
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    
+}
+
+#me{
+    height:130px;
+    float: left;
+   border: 2px solid white;
+   margin: 2%;
+   padding: 5px;
+   background-color: rgb(1, 39, 97);
+   
+}
+
+.profile > p{
+    font-family: 'Amatic SC', cursive, sans-serif;
+    font-size: 85px;
+    border: 2px solid white;
+    color: rgb(102, 214, 252);
+    background-color: rgb(1, 39, 97);
+  
+}
+
+
+/*navigation bar*/
+
+.menu{
+    background-color: rgb(0, 172, 163);
+    border: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+}
+.menu a {
+    
+    color: #ffffff;
+    text-align: center;
+   margin:8.5%;
+    
+    text-decoration: none;
+    font-size: 30px;
+    
+}
+
+.menu a:hover{
+    background-color:  rgb(102, 214, 252);
+}
+
+.menu a:active{
+    color: blue;
+    
+}
+
+/*about section*/
+.guts{
+    margin-top: .5%;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(0, 173, 130);
+    text-align: center;
+}
+
+footer{
+    margin-top: .5%;
+    border: 1px solid white;
+    background-color: rgb(49, 103, 107);
+    
+    text-align: center;
+}
+
+#linked{
+    padding:.5%
+}
+#git{
+    padding:.5%;
+    margin-left: 1%;
+}
+
+.intouch{
+text-decoration: none;
+color: rgb(82, 82, 82);
+font-style: italic;
+
+}
+
+.aboutMe{
+    
+    margin:5%;
+    font-size: 20px;
+}
+
+#hi{
+    font-size:23px;
+}
+
+h1{
+    font-family: 'glacial', Times, serif;
+    font-size:3em;
+    text-decoration: underline;
+}
