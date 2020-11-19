@@ -1,3 +1,4 @@
+/* Mobile screen display*/
 body 
 { 
 	background-color: #FFFFFF;
@@ -24,7 +25,9 @@ nav
 nav a 
 { 
 	text-decoration: none;
-	margin-right: 1em; 
+    margin-right: 1em; 
+    display: block;
+	text-decoration: underline;
 }
 
 h1 
@@ -37,6 +40,7 @@ h2
 { 
 	color: #3399CC; 
     font-family: Georgia, 'Times New Roman', serif; 
+    display:none;
 }
 	 
 h3 
@@ -55,7 +59,9 @@ footer
 	font-size: 75%;
     font-weight: bold;
 	text-align: center;
-	font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: rgb(255,255,255);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(146,234,255,1) 52%, rgba(96,176,193,1) 100%);
 	
 }
 	   
@@ -79,45 +85,34 @@ ul{
  list-style-image: url('../images/marker.gif');
 }
 
-/* Mobile screen display*/
-
-@media only screen and (max-width: 641px){
-
-	nav > a {
-		display: block;
-		text-decoration: underline;
-	}
-	h2{
-		display:none;
-	}
-
-	main > img{
-		display: none;
-	}
-
-	footer{
-	background: rgb(255,255,255);
-	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(146,234,255,1) 52%, rgba(96,176,193,1) 100%);
-	}
-
+main > img{
+    display: none;
 }
 
-/*End mobile display
 
-/* Tablet screen display */
+/*End mobile display/*
 
-@media only screen and (max-width: 1024px){
+/*regular display*/
+@media only screen and (min-width: 641px){
+
+	nav a 
+{ 
 	
-	h2{
-		display: block;
-	}
-	nav > a {
-	text-decoration: underline;
-	}
-	
+    margin-right: 1em; 
+    display: inline;
+}
+h2 
+{ 
+    display:block;
+	color: #3399CC; 
+    font-family: Georgia, 'Times New Roman', serif; 
+}
 
-	footer{
-		background: rgb(255,255,255);
-		background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(146,234,255,1) 52%, rgba(96,176,193,1) 100%);
-		}
+
+main > img{
+    display: block;
+}
+
+
+
 }
