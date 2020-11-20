@@ -1,0 +1,93 @@
+/* Luke Brandt
+11/20/2020*/
+
+
+/* mobile first */
+body { 
+	background-image: url('../images/yogamobile.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    color: #3F2860;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+header { 
+	background-color: #9BC1C2; 
+	
+}
+
+main > img{
+display:none;
+}
+
+h1 { 
+	text-indent: 1em;
+    line-height: 400%; 
+}
+
+nav { 
+     font-weight: bold; 
+}
+
+nav > ul {
+	list-style-type: none;
+	margin: 0 ;
+	padding: 0 ;
+}
+
+main > ul > li{
+	list-style-image: url('../images/yogabullet.png');
+	margin-left:3em;
+}
+
+address{
+	margin-bottom: .5em;
+}
+
+footer { 
+	background-color: #9BC1C2; 
+    font-size: small;
+	text-align: center;
+	font-style: italic;
+	padding:.5em;
+}
+
+
+/* table design */
+.schedule{
+	border-collapse: collapse;
+	border: solid black 1px;
+	width:100%;
+	margin-bottom: .5em;
+}
+
+td{
+border: solid black 1px;
+text-align: center;
+}
+
+/*desktop display*/
+@media only screen and (min-width: 641px){
+
+	main > img{
+		display:inline;
+		}
+
+	header{
+		background-image: url('../images/lilyheader.jpg');
+		background-position: right;
+		background-repeat: no-repeat;
+	}
+	
+	body{
+		background-color: #F5F5F5;
+		background-image: none;
+	}
+
+	nav > ul > li{
+		list-style-type: none;
+		
+		display: inline;
+	}
+}
