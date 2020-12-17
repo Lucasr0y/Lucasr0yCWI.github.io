@@ -125,7 +125,7 @@ form > .container {
   }
 
   /* Media Query for Desktop Viewport */
-@media (min-width: 992px){
+@media (min-width: 768px){
     /*styles for each section*/
 
     
