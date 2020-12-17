@@ -1,0 +1,179 @@
+/*Luke Brandt 12/16/2020*/
+/* Show mobile class, hide tablet-desktop class and menu-links id */
+.mobile {
+    display: block;
+}
+header{
+    margin-top:100px;
+   padding:50px;
+}
+
+#carouselDrums{
+    display:none;
+}
+
+
+body{
+    background-color: rgb(77, 77, 77);
+    color:white;
+}
+
+
+
+
+h1{
+    font-family: 'Michroma', serif, sans-serif;
+}
+
+h2{
+    font-family: 'Rock Salt', cursive, sans-serif;
+    padding-bottom:20px;
+    border-bottom: 15px solid #343a40;
+    
+}
+ h3{
+     padding-bottom:10px;
+     font-weight: bold;
+     border-bottom: 1px solid white;
+ }
+ .price{
+     font-weight: 1.5em;
+     font-style:italic;
+ }
+
+section{
+   
+    padding-top:150px;
+}
+footer{
+    margin-top:100px;
+}
+
+/*styles for each section*/
+#about{
+    border:none;
+    
+}
+
+#products{
+    border:none;
+    
+}
+
+#lessons{
+    border: none;
+}
+#drumLessons{
+    display:none;
+}
+
+#contact{
+    border:none;
+}
+
+/*line break section*/
+.stick{
+    display:none;
+}
+
+
+#products{
+    margin-bottom:500px;
+}
+.carousel-inner{
+    width: auto;
+    height: 750px;
+}
+
+table{
+    background-color:rgb(224, 224, 224) ;
+}
+
+
+
+
+
+/*Contact for style*/
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  
+  input[type=submit] {
+    background-color: blue;
+    color: white;
+    padding: 12px 20px;
+    border:1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+form > .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    
+  }
+
+  /* Media Query for Desktop Viewport */
+@media (min-width: 992px){
+    /*styles for each section*/
+
+    
+    header{
+        margin-top:100px;
+       
+    }
+
+    section{
+        margin:100px 200px 0px ;
+        padding:200px 0px 100px;
+        
+        
+    }
+    #carouselDrums{
+        display:block;
+    }
+#about{
+    border: 10px solid white;
+    
+}
+
+#products{
+    border: 10px solid white;
+    
+}
+
+#lessons{
+    border: 10px solid white;
+}
+
+#drumLessons{
+    display:block;
+}
+
+#contact{
+    border: 10px solid white;
+}
+
+/*line break section*/
+.stick{
+    display:block;
+    padding:0;
+}
+
+p{
+    font-size:1.5em;
+}
+
+
+}
