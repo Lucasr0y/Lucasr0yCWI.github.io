@@ -1,0 +1,123 @@
+body{
+    background-image: url("../images/pexels-photo-189349.jpeg");
+}
+h1{
+    background-color: #292D3E;
+    width: auto;
+    font-size: auto;
+    text-align: center;
+    color: white;
+}
+img{
+   width:300px;
+    display: inline-flex;
+}
+.container {
+    background-color: #292D3E;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+    
+}
+.btnArea{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    
+}
+#order-btn {
+    color: #1D9AF2;
+    background-color: #292D3E;
+    border: 1px solid #1D9AF2;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+    font-size:25px;
+    box-shadow: 0 0 4px #999;
+    background-position: center;
+    transition: background 0.8s;
+    }
+    
+#order-btn:hover {
+    background:#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    color: white;
+    }
+    
+#order-btn:active{
+    background-color:#292d3e;
+    background-size: 100%;
+    transition: background 0s;
+    }
+
+    h3{
+        color:white;
+    }
+    
+    #todaysdate{
+        border: solid 1px #ccc;
+        padding:10px;
+        font-family: "Segoe UI",Arial,sans-serif;
+        color: white;
+        margin-top: 10px; }
+
+ @media only screen and (min-width: 1260px){
+        body{
+            background-image: url('../images/pexels-photo-189349.jpeg');
+        }
+        .btnArea{
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            
+        }
+        h1{
+            background-color: #292D3E;
+            width: auto;
+            font-size: 150px;
+            text-align: center;
+            color: white;
+        }
+        img{
+            width: auto; 
+            display: inline;
+        }
+        
+        #order-btn {
+            color: #1D9AF2;
+            background-color: #292D3E;
+            border: 1px solid #1D9AF2;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            
+            font-size:25px;
+            box-shadow: 0 0 4px #999;
+            background-position: center;
+            transition: background 0.8s;
+            }
+            
+        #order-btn:hover {
+            background:#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+            color: white;
+            }
+            
+        #order-btn:active{
+            background-color:#292d3e;
+            background-size: 100%;
+            transition: background 0s;
+            }
+        
+        .container {
+            background-color: #292D3E;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 20px 100px;
+            padding:50px;
+        }
+        
+    }
