@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Luke Brandt                                  #
+#Date Created:   1/20/2021                                #
+#Version:1.0                                                #
+#Date Last Modified: 2/3/2021                             #
+#Modified by:  Luke Brandt                                        #
+#Modification log:                                  #
+ --
+ 1/26/2021 moved java to separte page, added fonts
+ 1/27/2021 moved order form to seprate page for functionality, added newsletter form to homepage
+ 2/3/2021 removed photo gallery, made title a link to homepage from all pages, added slideshow
+ 2/15/2021 added favicon
+------------------------------------------------------------------------------------------------------------------>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Caped Crusader Comics</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="images/pow.jpg"/>
+  </head>
+  <body>
+    <header>
+      <div id="caped">
+          <a href="index.html"><h1>Caped Crusader Comics</h1></a>
+      </div>
+    </header>
+    <div class="secondBox">
+      <main>
+        <nav>
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="order.html">Order</a>
+            
+            <a href="location.html">Contact Us</a>
+            <a href="help.html">Help</a>
+            
+          </div>
+          <!--end menu div-->
+        </nav>
+        <div class="container">
+            <div class="mainPage">
+            <div id="slideShow">
+                <img id="slide" src="images/comic-shelf.png" alt="">
+                <div id="slides">
+                  <img src="images/comic-shelf.png" alt="rows of various comic books displayed on a shelf">
+                  <img src="images/comic-pile.png" alt="various comic books spread out on top of each other with their titles showing">
+                  <img src="images/comic-stack.png" alt="various old comic books stacked on top of each other with price tags displayed">
+                  <img src="images/comic-table.png" alt="various comic books layed out on top of each other on a dark brown wooden table">
+                  <img src="images/comics-on-wall.png" alt="comics with the Hulk as the title framed in black frames on a white wall">
+                  <img src="images/girl-with-comic.png" alt="girl with glasses laying down between book shelves reading an opened comic">
+                  
+                  <img src="images/xmen.png" alt="a red comic with the title of Xmen being pulled from a box of comic books">
+                </div>
+                <!--Images from https://unsplash.com/s/photos/comic free stock photos-->
+            </div>
+            
+            <h1>About Us</h1>
+            <p>
+              We're a locally owned comic book store tucked away in the heart of
+              downtown. We have a wide variety of comics as well as movies,
+              games and collectables. Stop by our store anytime between 10am and 8pm, Tuesday through Sunday to see what we have in our collection, or feel free 
+              to browse our online catalogue to add to your own. We also offer cash or in-store credit for any collectable items you may want to sell. So fly
+              down faster than a speeding bullet and check out our little shop!
+          </div>
+          <!--end about page div-->
+          <div class="newsLetter">
+            <h2>Join our newsletter for info on new stock and promotions!</h2>
+            <form id="nl_form" name="nl_form" action="join.html" method="get">
+              <div>
+                <label for="email_1">Email Address: </label>
+                <input type = "text" id="email_1" name = "email_1" placeholder="brucewayne@example.com">
+                <span>*</span>
+              </div>
+              <div>
+                <label for="email_2"> Confirm Email address: </label>
+                <input type = "text" id = "email_2" name="email_2">
+                <span>*</span>
+              </div>
+              <div>
+                <label for="first_name"> First name: </label>
+                <input type = "text" id = "first_name" name = "first_name">
+                <span>*</span>
+              </div>
+              <div>
+                <label id = "button_spacer">&nbsp;</label>
+                <input type = "button" id = "join_nl" value = "Join">
+                <input type = "button" id = "clear_form" value = "Clear">
+              </div>
+
+          </div><!--end form div-->
+        </div>
+        <!--end container div-->
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="java/main_page.js"></script>
+        
+      </main>
+
+      <footer>
+        <p>Caped Crusader Comics &copy; 1995</p>
+        <p><a href="tel:12223334444">208-56-Comic</a></p>
+        <p><a href="mailto:#@gmail.com">capedcrusadercomics@gmail.com</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

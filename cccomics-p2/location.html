@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Luke Brandt                                  #
+#Date Created:   1/28/2021                                #
+#Version:1.0                                                #
+#Date Last Modified: 2/16/2021                             #
+#Modified by:  Luke Brandt                                        #
+#Modification log:                                  #
+
+2/16/2021
+
+ --
+ 
+------------------------------------------------------------------------------------------------------------------>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Caped Crusader Comics</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="images/pow.jpg"/>
+  </head>
+  <body>
+    <header>
+      <div id="caped">
+        <a href="index.html"><h1>Caped Crusader Comics</h1></a>
+      </div>
+    </header>
+    <div class="secondBox">
+      <main>
+        <nav>
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="order.html">Order</a>
+
+            <a href="location.html">Contact Us</a>
+            <a href="help.html">Help</a>
+          </div>
+          <!--end menu div-->
+        </nav>
+        <div class="container">
+          <div class="location">
+            <img
+              src="images/comic-location.PNG"
+              alt="map showing the location of the store"
+            />
+            <p>1234 N. Main st. Boise, Id 83705</p>
+            <p>Hours: 10am - 8pm, Tue - Sun</p>
+            <p><a href="tel:12223334444">208-56-Comic</a></p>
+            <p>
+              <a href="mailto:#@gmail.com">capedcrusadercomics@gmail.com</a>
+            </p>
+          </div>
+          <!--End location div-->
+          <div class="contact_form">
+            <h2>Contact us with any questions</h2>
+            <form class="" action="thankyou.php" method="post">
+              <div>
+                <label for="contact_name">Name: </label>
+                <input type="text" name="contact_name" id="contact_name" />
+                <span>*</span>
+              </div>
+              <div>
+                <label for="contact_email">Email: </label>
+                <input type="text" name="contact_email" id="contact_email" placeholder="brucewayne@example.com" />
+                <span>*</span>
+              </div>
+              <div>
+                <label for="contact_phone">Phone Number: </label>
+                <input type="text" name="contact_phone" id="contact_phone" placeholder="123-123-1234"/>
+                <span>*</span>
+              </div>
+              <div>
+                <label for="contact_reason">What can we help with? </label>
+                <select name="contact_reason" id="contact_reason">
+                  <option value="">What do you have questions about?</option>
+                  <option>Location</option>
+                  <option>Order issues</option>
+                  <option>Available items</option>
+                  <option>I have stuff I want to sell</option>
+                  <option>Other questions</option>
+                </select>
+                <span>*</span>
+              </div>
+              <div>
+                <label>How can we contact you?</label>
+                <input
+                  type="radio"
+                  name="contact_sel"
+                  id="email_sel"
+                  value="email"
+                  checked
+                />Email
+                <input
+                  type="radio"
+                  name="contact_sel"
+                  id="phone_sel"
+                  value="phone"
+                />Phone
+                <input
+                  type="radio"
+                  name="contact_sel"
+                  id="text_sel"
+                  value="text"
+                />Text
+              </div>
+              <div>
+                <label for="comments">Comments: </label>
+                <textarea
+                  name="comments"
+                  id="comments"
+                  rows="5"
+                  cols="50"
+                ></textarea>
+              </div>
+              <div>
+                <label>&nbsp;</label>
+                <input type="submit" id="submit" value="Submit" />
+                <input type="button" id="reset_form" value="Reset" />
+              </div>
+            </form>
+          </div>
+          <!--end contact form div-->
+        </div>
+        <!--end container div-->
+        
+        <!--<script src="java/contact_form.js"></script>-->
+      </main>
+
+      <footer>
+        <p>Caped Crusader Comics &copy; 1995</p>
+        <p><a href="tel:12223334444">208-56-Comic</a></p>
+        <p><a href="mailto:#@gmail.com">capedcrusadercomics@gmail.com</a></p>
+      </footer>
+    </div>
+    <!--End second box div-->
+  </body>
+</html>
