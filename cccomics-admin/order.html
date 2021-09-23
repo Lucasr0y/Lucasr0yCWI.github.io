@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------
+--
+#Original Author:  Luke Brandt                                  #
+#Date Created:   1/27/2021                                #
+#Version:1.0                                                #
+#Date Last Modified: 2/15/2021                             #
+#Modified by:  Luke Brandt                                        #
+#Modification log:                                  #
+
+2/15/2021 added new arrivals images
+9/17/2021 added employees and admin to nav bar
+ --
+ 
+------------------------------------------------------------------------------------------------------------------>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Caped Crusader Comics</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="images/pow.jpg"/>
+  </head>
+  <body>
+    <header>
+      <div id="caped">
+        <a href="index.html"><h1>Caped Crusader Comics</h1></a>
+      </div>
+    </header>
+    <div class="secondBox">
+      <main>
+        <nav>
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="order.html">Order</a>
+
+            <a href="location.html">Contact Us</a>
+            <a href="help.html">Help</a>
+           
+          </div>
+          <!--end menu div-->
+        </nav>
+        <div class="container">
+          <div class="mainPage">
+            <h1>Order Online</h1>
+            <p>
+              Browse our selection online. We have a wide variety of comics,
+              books, movies, games and other collectable treasures!
+            </p>
+          </div>
+          <!--end about page div-->
+            <div class="comics">
+              <h1>New Arrivals</h1>                                      
+                            <div><img src="images/resized-comics/uncanny-xmen.png" alt="The Uncanny Xmen"></div>
+                            <!--https://comicvine.gamespot.com/homage-covers/4015-43734/-->
+                            <div><img src="images/resized-comics/iron-man.png"alt="Iron Man"></div>
+                            <!--https://wallpapersafari.com/comic-book-cover-wallpaper/-->
+                            <div><img src="images/resized-comics/silver-surfer.png" alt="The Silver Surfer"></div>
+                            <!--https://nl.ign.com/action-comics-vol-1/116254/gallery/the-25-most-iconic-comic-book-covers-of-all-time?p=1 for all following photos-->
+                            <div><img src="images/resized-comics/harley.png" alt="Batman, Harley Quinn"></div>
+                           <div><img src="images/resized-comics/detective.png" alt="Detective Comics"></div>
+                            <div><img src="images/resized-comics/spawn.png" alt="Spawn"></div>
+                            <div><img src="images/resized-comics/superman.png" alt="Superman, The Death of Superman"></div>
+                            <div><img src="images/resized-comics/spiderman.png" alt="The Amazing Spiderman"></div>
+                            <div><img src="images/resized-comics/vision.png" alt="The Avengers, Behold the Vision"></div>
+                            <div><img src="images/resized-comics/tmnt.png" alt="Teenage Mutant Ninja Turtles"></div>
+                            <div><img src="images/resized-comics/walking.png" alt="The Walking Dead"></div>
+                            <div><img src="images/resized-comics/hawkeye.png" alt="The Avengers"></div>
+                            <div><img src="images/resized-comics/dark.png" alt="Batman, The Dark Knight Returns"></div>
+                            <div><img src="images/resized-comics/flash.png" alt="The Flash"></div>
+                            <div><img src="images/resized-comics/hulk.png" alt="The Incredible Hulk"></div>
+                            <div><img src="images/resized-comics/watchmen.png" alt="The Watchmen"></div>
+                                                               
+            </div>
+            <div id="cata"><a href="catalogue.html">View Full Catalogue...</a></div>
+          <div class="orderForm">
+            <h2>Order look-up</h2>
+            <div>
+              <label for="orderNum">Order number:</label>
+              <input type="text" id="orderNum" />
+            </div>
+            <div>
+              <label for="orderName">Last name:</label>
+              <input type="text" id="orderName" />
+            </div>
+            <div>
+              <input type="button" id="lookup" value="Lookup Order" />
+            </div>
+          </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="java/order_lookup.js"></script>
+      </main>
+
+      <footer>
+        <p>Caped Crusader Comics &copy; 1995</p>
+        <p><a href="tel:12223334444">208-56-Comic</a></p>
+        <p><a href="mailto:#@gmail.com">capedcrusadercomics@gmail.com</a></p>
+        <p>
+            <a href="admin.php">Admin</a>
+            &nbsp;
+            <a href="listemployees.php">Employees</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
