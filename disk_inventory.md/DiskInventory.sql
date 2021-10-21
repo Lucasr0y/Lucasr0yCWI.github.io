@@ -2,8 +2,9 @@
 *Date		Programmer		Description
 *-----------------------------------------------------------
 *10/08/2021	Luke Brandt		Initital implementation of disk db.
-*10/14/2021				Added number values to NVARCHAR, started adding values
-*10/15/2021					Inserted Data for tables
+*10/14/2021		//		    Added number values to NVARCHAR, started adding values
+*10/15/2021		//			Inserted Data for tables
+*10/20/2021		//			Updated artist table, Fixed fatal error caused by disk_has_artist_table
 *****************************************************************************************************/
 -- drop & create database
 USE master;
@@ -145,10 +146,10 @@ VALUES
 	('Justice', 2),
 	('Blink-182', 3),
 	('Led Zepplin', 3),
-	('Macklemore & Ryan Lewis', 2),
+	('Macklemore', 2),
 	('Childish Gambino', 1),
 	('A Day to Remember', 3),
-	('John Williams', 4),
+	('John Williams', 1),
 	('Gorillaz', 3),
 	('Jack Johnson', 1),
 	('Hobo Johnson', 1),
@@ -156,16 +157,9 @@ VALUES
 	('Joji', 1),
 	('Amine', 1),
 	('Death From Above 1979', 2),
-	('Royal Blood', 2)
-
--- Seperates Macklemore & Ryan Lewis to allow two artists on one disk
-UPDATE artist
-SET artist_name = 'Macklemore'
-WHERE artist_id = 11
-
-INSERT INTO artist
-VALUES
+	('Royal Blood', 2),
 	('Ryan Lewis',2)
+
 	
 
 --Borrower table:
@@ -254,29 +248,35 @@ WHERE disk_id = 21
 INSERT INTO disk_has_artist
 	(disk_id, artist_id)
 Values
-	(1,2),
-	(2,3), 
-	(22,3), -- 1 artist has multiple disks
-	(3,4),
-	(4,5),
-	(5,6),
-	(6,7),
-	(7,8),
-	(8,9),
-	(9,10),
-	(10,11),
-	(10,23), -- disk has multiple artists
-	(11,12),
-	(12,13),
-	(13,14),
-	(14,15),
-	(15,16),
-	(16,17),
-	(17,18),
-	(18,19),
-	(19,20),
-	(20,21),
-	(21,22)
+	(1,1),
+	(2,2), 
+	(22,2), -- 1 artist has multiple disks
+	(3,3),
+	(4,4),
+	(5,5),
+	(6,6),
+	(7,7),
+	(8,8),
+	(9,9),
+	(10,10),
+	(10,22), -- disk has multiple artists this one
+	(11,11),
+	(12,12),
+	(13,13),
+	(14,14),
+	(15,15),
+	(16,16),
+	(17,17),
+	(18,18),
+	(19,19),
+	(20,20),
+	(21,21)
+
+--select disk_name, artist_name from disk_has_artist
+--Join disk
+--	ON disk.disk_Id = disk_has_artist.disk_id
+--JOIN artist
+--	ON artist.artist_id = disk_has_artist.artist_id
 
 --1. Insert at least 20 rows of data into the table
 --2. Insert at least 2 different disks
