@@ -5,6 +5,7 @@
 *10/14/2021		//		    Added number values to NVARCHAR, started adding values
 *10/15/2021		//			Inserted Data for tables
 *10/20/2021		//			Updated artist table, Fixed fatal error caused by disk_has_artist_table
+*10/22/2021		//			Add SQL for reports
 *****************************************************************************************************/
 -- drop & create database
 USE master;
@@ -146,7 +147,7 @@ VALUES
 	('Justice', 2),
 	('Blink-182', 3),
 	('Led Zepplin', 3),
-	('Macklemore', 2),
+	('Macklemore', 1),
 	('Childish Gambino', 1),
 	('A Day to Remember', 3),
 	('John Williams', 1),
@@ -158,7 +159,7 @@ VALUES
 	('Amine', 1),
 	('Death From Above 1979', 2),
 	('Royal Blood', 2),
-	('Ryan Lewis',2)
+	('Ryan Lewis',1)
 
 	
 
@@ -297,7 +298,7 @@ VALUES
 	('01-22-2013', '07-18-2015', 9, 5),
 	('04-25-2020', '02-22-2021', 12, 5), -- At least 1 borrower must have at least 2 different rows here
 	('02-14-2020', NULL,6 , 13),
-	('07-05-2017', '08-08-2017', 11, 3),
+	('07-05-2017', '08-08-2017', 10, 3),
 	('09-14-2021', NULL, 7, 18),
 	('01-20-2020', '02-10-2020', 10, 7),-- At least 1 disk must have at least 2 different rows here
 	('08-20-2020', '09-01-2020', 18, 19),
@@ -332,6 +333,87 @@ VALUES
 SELECT 
 	disk_has_borrower.borrower_id, (borrower_fname + ' ' + borrower_lname) AS 'Borrower Name', disk.disk_id, disk_name,
 		borrowed_date, returned_date
+FROM disk_has_borrower
+Join disk
+	on disk_has_borrower.disk_id = disk.disk_id
+Join borrower
+	on disk_has_borrower.borrower_id = borrower.borrower_id
+WHERE returned_date IS NULL
+ORDER BY borrowed_date
+
+
+--PROJECT 4
+USE disk_inventorylb;
+go
+
+
+-- step 4
+-- creates a view to show the first and last name of artists stored as FIRST and LAST
+DROP VIEW IF EXISTS View_Individual_Artist
+go
+
+CREATE VIEW View_Individual_Artist
+	AS SELECT artist_id,
+	IIF(CHARINDEX(' ', artist_name) >0,
+		LEFT(artist_name, CHARINDEX(' ', artist_name)-1),artist_name) AS First,
+	IIF(CHARINDEX(' ', artist_name) >0,
+		RIGHT(artist_name, LEN(artist_name) - CHARINDEX(' ', artist_name)), '') AS Last
+	From Artist
+	WHERE artist_type_id = 1;
+go
+
+SELECT FIRST as 'Artist First Name', LAST as 'Artist Last Name'
+FROM View_Individual_Artist
+
+--step 3
+--Show the disks in your database and  any associated individual artists only. (uses view from step 4)
+select disk_name,release_date, FIRST as 'Artist First Name', LAST as 'Artist Last Name'
+from disk_has_artist
+Join disk
+	ON disk.disk_Id = disk_has_artist.disk_id
+JOIN View_Individual_Artist
+	ON disk_has_artist.artist_id = View_Individual_Artist.artist_id
+
+-- Step 5 Show the disks in your database and any associated Group artists only
+
+SELECT disk_name,release_date, artist_name AS 'Group Name'
+from disk_has_artist
+Join disk
+	ON disk.disk_Id = disk_has_artist.disk_id
+Join artist
+	ON disk_has_artist.artist_id = artist.artist_id 
+	WHERE artist_type_id > 1;
+
+-- step 6 Re-write the previous query using the View_Individual_Artist view. Do not redefine the view. Consider using ‘NOT EXISTS’ or ‘NOT IN’ as the only restriction in the WHERE clause or a join. The output matches the output from the previous query.
+SELECT disk_name,release_date, artist_name AS 'Group Name'
+from disk_has_artist
+Join disk
+	ON disk.disk_Id = disk_has_artist.disk_id
+Join artist
+	ON disk_has_artist.artist_id = artist.artist_id 
+	WHERE artist.artist_id  NOT IN
+		(SELECT artist_id
+			FROM View_Individual_Artist);
+
+--7 Show the borrowed disks and who borrowed them
+SELECT borrower_fname AS First, borrower_lname AS Last, disk_name,
+		borrowed_date, returned_date
+FROM disk_has_borrower
+Join disk
+	on disk_has_borrower.disk_id = disk.disk_id
+Join borrower
+	on disk_has_borrower.borrower_id = borrower.borrower_id
+
+--8 Show the number of times a disk has been borrowed.
+SELECT disk.disk_id, disk_name, COUNT(disk_name) as 'Times Borrowed'
+FROM disk
+Join disk_has_borrower
+	on disk_has_borrower.disk_id = disk.disk_id
+GROUP BY disk_name, disk.disk_id
+ORDER BY 'Times Borrowed' DESC
+
+--9 Show the disks outstanding or on-loan and who has each disk.
+SELECT disk_name, borrowed_date, returned_date, borrower_lname AS 'Last Name'
 FROM disk_has_borrower
 Join disk
 	on disk_has_borrower.disk_id = disk.disk_id
