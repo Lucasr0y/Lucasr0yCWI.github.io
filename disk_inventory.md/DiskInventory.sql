@@ -342,6 +342,7 @@ WHERE returned_date IS NULL
 ORDER BY borrowed_date
 
 
+
 --PROJECT 4
 USE disk_inventorylb;
 go
@@ -367,7 +368,7 @@ FROM View_Individual_Artist
 
 --step 3
 --Show the disks in your database and  any associated individual artists only. (uses view from step 4)
-select disk_name,release_date, FIRST as 'Artist First Name', LAST as 'Artist Last Name'
+select disk_name,CONVERT(nvarchar, release_date,101) as 'Release Date', FIRST as 'Artist First Name', LAST as 'Artist Last Name'
 from disk_has_artist
 Join disk
 	ON disk.disk_Id = disk_has_artist.disk_id
@@ -376,7 +377,7 @@ JOIN View_Individual_Artist
 
 -- Step 5 Show the disks in your database and any associated Group artists only
 
-SELECT disk_name,release_date, artist_name AS 'Group Name'
+SELECT disk_name,CONVERT(nvarchar, release_date,101) as 'Release Date', artist_name AS 'Group Name'
 from disk_has_artist
 Join disk
 	ON disk.disk_Id = disk_has_artist.disk_id
@@ -385,7 +386,7 @@ Join artist
 	WHERE artist_type_id > 1;
 
 -- step 6 Re-write the previous query using the View_Individual_Artist view. Do not redefine the view. Consider using ‘NOT EXISTS’ or ‘NOT IN’ as the only restriction in the WHERE clause or a join. The output matches the output from the previous query.
-SELECT disk_name,release_date, artist_name AS 'Group Name'
+SELECT disk_name,CONVERT(nvarchar, release_date,101) as 'Release Date', artist_name AS 'Group Name'
 from disk_has_artist
 Join disk
 	ON disk.disk_Id = disk_has_artist.disk_id
