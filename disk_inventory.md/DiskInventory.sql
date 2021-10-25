@@ -6,6 +6,7 @@
 *10/15/2021		//			Inserted Data for tables
 *10/20/2021		//			Updated artist table, Fixed fatal error caused by disk_has_artist_table
 *10/22/2021		//			Add SQL for reports
+*10/25/2021		//			Add ins & updated sp's for disk has borrower
 *****************************************************************************************************/
 -- drop & create database
 USE master;
@@ -342,7 +343,6 @@ WHERE returned_date IS NULL
 ORDER BY borrowed_date
 
 
-
 --PROJECT 4
 USE disk_inventorylb;
 go
@@ -422,3 +422,69 @@ Join borrower
 	on disk_has_borrower.borrower_id = borrower.borrower_id
 WHERE returned_date IS NULL
 ORDER BY borrowed_date
+
+
+--Lab Wk5Day1 - Ch15
+--	Create 2 stored procedures:
+--Insert into diskHasBorrower. Parameters for all columns except the PK. 
+--Update to diskHasBorrower. Accept all columns & updates based on the PK. Set a default value of null for the return date. 
+--Include drop logic, error checking, and execution statements (1 that works & 1 that generates a user error).
+--1. Insert into diskhasBorrower
+
+DROP PROC IF EXISTS sp_disk_has_borrower_insert
+go
+
+CREATE PROC sp_disk_has_borrower_insert
+	@borrowed_date date,
+	@disk_id int,
+	@borrower_id int,
+	@returned_date date = NULL
+AS
+BEGIN TRY
+	INSERT INTO disk_has_borrower
+		(borrowed_date, returned_date, disk_id, borrower_id)
+	VALUES
+		(@borrowed_date, @returned_date, @disk_id, @borrower_id)
+END TRY
+BEGIN CATCH
+	    PRINT 'An error occurred. Row was not inserted.';
+    PRINT 'Error number: ' + CONVERT(varchar, ERROR_NUMBER());
+    PRINT 'Error message: ' + CONVERT(varchar, ERROR_MESSAGE());
+END CATCH
+go
+
+EXEC sp_disk_has_borrower_insert '11-10-2019','12-10-2019', 7,8
+go
+EXEC sp_disk_has_borrower_insert '10-25-2021', 11, 12
+go
+EXEC sp_disk_has_borrower_insert '01-25-2019', '10-15-2019',7, 80
+go
+
+-- 2 Update to disk_has_borrower
+DROP PROC IF EXISTS disk_has_borrower_update;
+go
+
+CREATE PROC disk_has_borrower_update
+	@disk_has_borrower_id int,
+	@borrowed_date date,
+	@disk_id int,
+	@borrower_id int,
+	@returned_date date = NULL
+AS
+BEGIN TRY
+	UPDATE disk_has_borrower
+	SET disk_id = @disk_id, borrower_id = @borrower_id, borrowed_date = @borrowed_date, returned_date = @returned_date
+	WHERE disk_has_borrower_id = @disk_has_borrower_id;
+END TRY
+BEGIN CATCH
+	PRINT 'An error occurred. Row was not updated.';
+    PRINT 'Error number: ' + CONVERT(varchar, ERROR_NUMBER());
+    PRINT 'Error message: ' + CONVERT(varchar, ERROR_MESSAGE());
+END CATCH
+GO
+
+EXEC disk_has_borrower_update 18, '10-25-2020', 1, 6,'11-20-2020'
+go
+
+EXEC disk_has_borrower_update 18, '10-25-2020', 155, 6,'11-20-2020'
+go
