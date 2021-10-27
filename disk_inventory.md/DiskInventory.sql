@@ -453,11 +453,11 @@ BEGIN CATCH
 END CATCH
 go
 
-EXEC sp_disk_has_borrower_insert '11-10-2019','12-10-2019', 7,8
+EXEC sp_disk_has_borrower_insert '11-10-2019', 7,8,'12-10-2019'
 go
 EXEC sp_disk_has_borrower_insert '10-25-2021', 11, 12
 go
-EXEC sp_disk_has_borrower_insert '01-25-2019', '10-15-2019',7, 80
+EXEC sp_disk_has_borrower_insert '01-25-2019',7, 80, '10-15-2019'
 go
 
 -- 2 Update to disk_has_borrower
