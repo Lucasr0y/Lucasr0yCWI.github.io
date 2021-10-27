@@ -365,6 +365,7 @@ go
 
 SELECT FIRST as 'Artist First Name', LAST as 'Artist Last Name'
 FROM View_Individual_Artist
+ORDER BY LAST
 
 --step 3
 --Show the disks in your database and  any associated individual artists only. (uses view from step 4)
@@ -374,6 +375,7 @@ Join disk
 	ON disk.disk_Id = disk_has_artist.disk_id
 JOIN View_Individual_Artist
 	ON disk_has_artist.artist_id = View_Individual_Artist.artist_id
+ORDER BY LAST
 
 -- Step 5 Show the disks in your database and any associated Group artists only
 
@@ -383,8 +385,8 @@ Join disk
 	ON disk.disk_Id = disk_has_artist.disk_id
 Join artist
 	ON disk_has_artist.artist_id = artist.artist_id 
-	WHERE artist_type_id > 1;
-
+	WHERE artist_type_id > 1
+ORDER BY 'Group Name'
 -- step 6 Re-write the previous query using the View_Individual_Artist view. Do not redefine the view. Consider using ‘NOT EXISTS’ or ‘NOT IN’ as the only restriction in the WHERE clause or a join. The output matches the output from the previous query.
 SELECT disk_name,CONVERT(nvarchar, release_date,101) as 'Release Date', artist_name AS 'Group Name'
 from disk_has_artist
@@ -394,8 +396,8 @@ Join artist
 	ON disk_has_artist.artist_id = artist.artist_id 
 	WHERE artist.artist_id  NOT IN
 		(SELECT artist_id
-			FROM View_Individual_Artist);
-
+			FROM View_Individual_Artist)
+ORDER BY 'Group Name'
 --7 Show the borrowed disks and who borrowed them
 SELECT borrower_fname AS First, borrower_lname AS Last, disk_name,
 		borrowed_date, returned_date
@@ -404,7 +406,7 @@ Join disk
 	on disk_has_borrower.disk_id = disk.disk_id
 Join borrower
 	on disk_has_borrower.borrower_id = borrower.borrower_id
-
+ORDER BY Last
 --8 Show the number of times a disk has been borrowed.
 SELECT disk.disk_id, disk_name, COUNT(disk_name) as 'Times Borrowed'
 FROM disk
@@ -453,7 +455,7 @@ BEGIN CATCH
 END CATCH
 go
 
-EXEC sp_disk_has_borrower_insert '11-10-2019', 7,8,'12-10-2019'
+EXEC sp_disk_has_borrower_insert '11-10-2020', 7,8 ,'12-10-2020'
 go
 EXEC sp_disk_has_borrower_insert '10-25-2021', 11, 12
 go
