@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Caveat&display=swap');
+
+body{
+  margin: 0px;
+		background-color: #5dbb63;
+    font-size: 20px;
+    font-family: 'ABeeZee', sans-serif;
+    height: 100%;
+	}
+header{
+	display: flex;
+	flex-direction: row;
+	
+}
+
+.main-content{
+  display: flex;
+}
+#pet-title{
+  color: #354a21;
+  -webkit-text-stroke: .25px #BDBDBD;
+  font-size: 70px;
+  margin: 10px;
+}
+
+#title-image{
+  width: 500px;
+}
+
+/*Navigation Bar */
+.nav-bar{
+	background-color: #354a21;
+	width: 100%;
+}
+.nav-bar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav-bar > ul >li {
+
+}
+
+.nav-bar > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.active{
+  background-color: #676767;
+}
+
+.about-us{
+  background-color: #354a21;
+  margin: 50px;
+  padding: 25px;
+
+  color: white;
+  border-radius: 25px;
+  border: 5px solid #293a1a;
+  box-shadow: 10px 10px 10px #354a21;
+}
+
+.about-us > h2 {
+  color: #354a21;
+  -webkit-text-stroke: .25px #BDBDBD;
+  font-size: 70px;
+  margin: 10px;
+}
+
+.about-us > h4{
+  text-decoration: underline;
+  text-decoration-color: #ffffff; 
+}
+
+.about-us > ul > li > a{
+  color: white;
+}
+
+
+.site-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 150px ;
+  text-decoration: none;
+  
+}
+.site-links > div {
+  border-radius: 25px;
+  border: 5px solid #BDBDBD;
+  box-shadow: 10px 10px 10px #676767;
+  background-color: #354a21;
+  width: 450px;
+  overflow: hidden;
+}
+
+.site-links > div> a{
+  text-decoration-line: none;
+}
+.site-links > div> a > img{
+  width: 450px;
+  height: 300px;
+
+}
+
+.site-links > div > a > h2{
+  text-align: center;
+  color: white;
+}
+
+#slogan{
+  text-align: center;
+  color: #354a21;
+  font-family: 'Caveat', cursive;
+}
+
+footer{
+  text-align: center;
+  background-color: #354a21;
+  padding: 10px;
+}
+
+form{
+  justify-content: center;
+  text-align: left;
+
+}
+
+form > input[type=text] {
+  width: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+form > button{
+  font-size: 20px;
+}
+
+.hero-image {
+  background-image:radial-gradient(closest-side, #000000, #6e6e6e3b, #00000000), url("pexels-pixabay-247447.jpg");
+  height: 100VH;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-image-banner {
+  background-image:radial-gradient(closest-side, #000000, #000000b7, #00000000), url("pexels-pixabay-247447.jpg");
+  height: 25VH;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.hero-text-banner {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
